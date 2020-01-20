@@ -1,8 +1,9 @@
 //Maya ASCII 2018 scene
 //Name: apple.ma
-//Last modified: Mon, Jan 20, 2020 02:41:56 PM
+//Last modified: Mon, Jan 20, 2020 04:12:19 PM
 //Codeset: 1252
 requires maya "2018";
+requires -nodeType "polyPlatonic" "modelingToolkit" "0.0.0.0";
 requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
@@ -14,13 +15,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "27F4963B-470D-4F8F-CD11-27BE5EF01E5B";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0.12160728497494233 12.516725184598876 -20.582960408509315 ;
-	setAttr ".r" -type "double3" 1772.0616473459297 177.80000000003812 0 ;
+	setAttr ".t" -type "double3" 13.12878121625697 17.756783946156112 -3.3491584790892452 ;
+	setAttr ".r" -type "double3" 2474.0616473422033 103.79999999938943 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "0A41AD52-44BE-F020-33EA-649A447D80BB";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 24.459481911134571;
+	setAttr ".coi" 21.022607170546653;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -83,10 +84,10 @@ createNode transform -n "pCube1";
 createNode mesh -n "pCubeShape1" -p "pCube1";
 	rename -uid "2AE747A2-4A6D-C5BC-2FB9-61B87888C707";
 	setAttr -k off ".v";
-	setAttr -s 2 ".iog[0].og";
+	setAttr -s 3 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.5 0.75 ;
+	setAttr ".pv" -type "double2" 0.49999997019767761 0.5416666567325592 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 87 ".uvst[0].uvsp[0:86]" -type "float2" 0.375 0.5 0.625 0.5
 		 0.375 0.75 0.625 0.75 0.875 0 0.875 0.25 0.125 0 0.125 0.25 0.625 0.41666666 0.79166669
@@ -110,17 +111,21 @@ createNode mesh -n "pCubeShape1" -p "pCube1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 23 ".pt";
+	setAttr -s 32 ".pt";
 	setAttr ".pt[0]" -type "float3" 3.7252903e-09 -0.05923564 7.4505806e-09 ;
 	setAttr ".pt[1]" -type "float3" 7.4505806e-09 -0.05923564 7.4505806e-09 ;
 	setAttr ".pt[2]" -type "float3" 0 0 -0.027502218 ;
 	setAttr ".pt[3]" -type "float3" 0 0 -0.027502218 ;
+	setAttr ".pt[8]" -type "float3" 0 2.9802322e-08 0 ;
 	setAttr ".pt[9]" -type "float3" 0 0 -0.027502218 ;
+	setAttr ".pt[11]" -type "float3" 0 2.9802322e-08 0 ;
+	setAttr ".pt[12]" -type "float3" 0 2.9802322e-08 0 ;
 	setAttr ".pt[13]" -type "float3" 0 0 -0.027502218 ;
+	setAttr ".pt[15]" -type "float3" 0 2.9802322e-08 0 ;
 	setAttr ".pt[20]" -type "float3" 0 0 -0.052948508 ;
 	setAttr ".pt[21]" -type "float3" 0 0 -0.052948508 ;
-	setAttr ".pt[26]" -type "float3" 0 1.8626451e-08 0 ;
-	setAttr ".pt[27]" -type "float3" 0 1.8626451e-08 0 ;
+	setAttr ".pt[26]" -type "float3" 0 2.9802322e-08 0 ;
+	setAttr ".pt[27]" -type "float3" 0 2.9802322e-08 0 ;
 	setAttr ".pt[29]" -type "float3" 0 -0.063066207 0 ;
 	setAttr ".pt[30]" -type "float3" 0 -0.063066214 0 ;
 	setAttr ".pt[31]" -type "float3" 3.7252903e-09 -0.05923564 0 ;
@@ -304,6 +309,131 @@ createNode camera -n "backShape" -p "back";
 	setAttr ".hc" -type "string" "viewSet -b %camera";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
+createNode transform -n "pCube2";
+	rename -uid "736ADCE7-4ABD-E388-FCEE-3AA68FB1EB04";
+	setAttr ".t" -type "double3" 0 4.5543588765295757 0 ;
+	setAttr ".s" -type "double3" 0.15656706985786073 0.95058011687177757 0.16089708544261852 ;
+createNode mesh -n "pCubeShape2" -p "pCube2";
+	rename -uid "838C50D8-4077-14EC-1810-0CAC0EDF84B1";
+	setAttr -k off ".v";
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr -s 2 ".ciog[0].cog";
+	setAttr ".pv" -type "double2" 0.5 0.625 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 42 ".uvst[0].uvsp[0:41]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5
+		 0.375 0.5 0.375 0.5 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.375 0.5
+		 0.625 0.5 0.625 0.75 0.375 0.75 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.375 0.5
+		 0.625 0.5 0.625 0.75 0.375 0.75 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 20 ".pt[16:35]" -type "float3"  0.1333562 -1.1175871e-08 
+		0 -0.13335621 -1.1175871e-08 0 -0.1333562 0 0 0.1333562 0 0 0.1333562 0.051786758 
+		-4.4408921e-16 -0.13335621 0.051786758 -4.4408921e-16 -0.1333562 0.047534242 -4.4408921e-16 
+		0.1333562 0.047534242 -4.4408921e-16 0.1333562 0.071877904 -8.8817842e-16 -0.13335621 
+		0.071877904 -8.8817842e-16 -0.1333562 0.11122476 -8.8817842e-16 0.1333562 0.11122476 
+		-8.8817842e-16 0.13335623 0.14914919 -1.4528632e-07 -0.13335621 0.14914919 -1.4528632e-07 
+		-0.1333562 0.20520042 1.3322676e-15 0.1333562 0.20520042 1.3322676e-15 0.13335623 
+		0.07545533 -0.21751013 -0.13335621 0.07545533 -0.21751013 -0.13335624 0.34552011 
+		0.092912406 0.13335624 0.34552011 0.092912406;
+	setAttr -s 36 ".vt[0:35]"  -0.5 -0.49999952 0.50000006 0.5 -0.49999952 0.50000006
+		 -0.5 0.5 0.50000006 0.5 0.5 0.50000006 -0.49999994 0.5 -0.50000006 0.49999994 0.5 -0.50000006
+		 -0.49999994 -0.49999952 -0.50000006 0.49999994 -0.49999952 -0.50000006 -0.38253587 0.8123374 0.58990413
+		 0.38253587 0.8123374 0.58990413 0.48678109 0.88328934 -0.31231073 -0.48678109 0.88328934 -0.31231073
+		 -0.5 0.5 -0.50000006 0.5 0.5 -0.50000006 -0.48678109 0.88328934 -0.31231073 0.48678109 0.88328934 -0.31231073
+		 -0.18333332 0.2550211 -0.50000006 0.18333332 0.2550211 -0.50000006 0.18333332 0.13731527 -0.50000006
+		 -0.18333332 0.13731527 -0.50000006 -0.18333332 0.35904503 -1.33562398 0.18333332 0.35904503 -1.33562398
+		 0.18333332 0.033291817 -1.33562398 -0.18333332 0.033291817 -1.33562398 -0.18333332 0.44330502 -2.47763324
+		 0.18333332 0.44330502 -2.47763324 0.18333332 -0.05096817 -2.47763324 -0.18333332 -0.05096817 -2.47763324
+		 -0.18333332 0.40068865 -3.79922867 0.18333332 0.40068865 -3.79922867 0.18333332 -0.0083518028 -3.79922867
+		 -0.18333332 -0.0083518028 -3.79922867 -0.18333332 0.40068865 -4.84943771 0.18333332 0.40068865 -4.84943771
+		 0.18333332 -0.0083518028 -4.84943771 -0.18333332 -0.0083518028 -4.84943771;
+	setAttr -s 68 ".ed[0:67]"  0 1 0 2 3 1 4 5 0 6 7 0 0 2 0 1 3 0 2 4 1
+		 3 5 1 4 6 0 5 7 0 6 0 0 7 1 0 2 8 0 3 9 0 8 9 0 5 10 0 9 10 0 4 11 0 11 10 0 8 11 0
+		 4 12 0 5 13 0 12 13 0 11 14 0 12 14 0 10 15 0 14 15 0 13 15 0 4 16 1 5 17 1 16 17 0
+		 7 18 1 17 18 0 6 19 1 19 18 0 16 19 0 16 20 0 17 21 0 20 21 0 18 22 0 21 22 1 19 23 0
+		 23 22 0 20 23 1 20 24 0 21 25 0 24 25 1 22 26 0 25 26 1 23 27 0 27 26 1 24 27 1 24 28 0
+		 25 29 0 28 29 1 26 30 0 29 30 1 27 31 0 31 30 1 28 31 1 28 32 0 29 33 0 32 33 0 30 34 0
+		 33 34 0 31 35 0 35 34 0 32 35 0;
+	setAttr -s 34 -ch 136 ".fc[0:33]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 14 16 -19 -20
+		mu 0 4 14 15 16 17
+		f 4 62 64 -67 -68
+		mu 0 4 38 39 40 41
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13
+		f 4 1 13 -15 -13
+		mu 0 4 2 3 15 14
+		f 4 7 15 -17 -14
+		mu 0 4 3 5 16 15
+		f 4 -23 24 26 -28
+		mu 0 4 18 19 20 21
+		f 4 -7 12 19 -18
+		mu 0 4 4 2 14 17
+		f 4 -3 20 22 -22
+		mu 0 4 5 4 19 18
+		f 4 17 23 -25 -21
+		mu 0 4 4 17 20 19
+		f 4 18 25 -27 -24
+		mu 0 4 17 16 21 20
+		f 4 -16 21 27 -26
+		mu 0 4 16 5 18 21
+		f 4 2 29 -31 -29
+		mu 0 4 4 5 23 22
+		f 4 9 31 -33 -30
+		mu 0 4 5 7 24 23
+		f 4 -4 33 34 -32
+		mu 0 4 7 6 25 24
+		f 4 -9 28 35 -34
+		mu 0 4 6 4 22 25
+		f 4 30 37 -39 -37
+		mu 0 4 22 23 27 26
+		f 4 32 39 -41 -38
+		mu 0 4 23 24 28 27
+		f 4 -35 41 42 -40
+		mu 0 4 24 25 29 28
+		f 4 -36 36 43 -42
+		mu 0 4 25 22 26 29
+		f 4 38 45 -47 -45
+		mu 0 4 26 27 31 30
+		f 4 40 47 -49 -46
+		mu 0 4 27 28 32 31
+		f 4 -43 49 50 -48
+		mu 0 4 28 29 33 32
+		f 4 -44 44 51 -50
+		mu 0 4 29 26 30 33
+		f 4 46 53 -55 -53
+		mu 0 4 30 31 35 34
+		f 4 48 55 -57 -54
+		mu 0 4 31 32 36 35
+		f 4 -51 57 58 -56
+		mu 0 4 32 33 37 36
+		f 4 -52 52 59 -58
+		mu 0 4 33 30 34 37
+		f 4 54 61 -63 -61
+		mu 0 4 34 35 39 38
+		f 4 56 63 -65 -62
+		mu 0 4 35 36 40 39
+		f 4 -59 65 66 -64
+		mu 0 4 36 37 41 40
+		f 4 -60 60 67 -66
+		mu 0 4 37 34 38 41;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".ai_translator" -type "string" "polymesh";
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "BF952FFA-41EE-1AE4-A575-B2A2503671A6";
 	setAttr -s 2 ".lnk";
@@ -371,6 +501,10 @@ createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "4814A485-451C-9A6D-7F4B-05964F0EF006";
 	setAttr ".b" -type "string" "playbackOptions -min 1 -max 120 -ast 1 -aet 200 ";
 	setAttr ".st" 6;
+createNode polyPlatonic -n "polyPlatonic1";
+	rename -uid "ED18817F-4437-B5CF-89DB-86A6805AD5D7";
+createNode polyPlatonic -n "polyPlatonic2";
+	rename -uid "34DBE4EB-4734-B310-6732-12A934CB88E5";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -379,6 +513,7 @@ select -ne :hardwareRenderingGlobals;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
 		 1 1 1 0 0 0 0 0 0 0 0 0
 		 0 0 0 0 ;
+	setAttr ".aoon" yes;
 	setAttr ".fprt" yes;
 select -ne :renderPartition;
 	setAttr -s 2 ".st";
@@ -389,6 +524,7 @@ select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderingList1;
 select -ne :initialShadingGroup;
+	setAttr -s 2 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
@@ -409,4 +545,5 @@ connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "pCubeShape1.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "pCubeShape2.iog" ":initialShadingGroup.dsm" -na;
 // End of apple.ma
