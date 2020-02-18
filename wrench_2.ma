@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: wrench_2.ma
-//Last modified: Sat, Feb 15, 2020 11:03:09 PM
+//Last modified: Sun, Feb 16, 2020 12:11:41 AM
 //Codeset: UTF-8
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -15,7 +15,7 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "7B9A58B7-ED4F-833E-10AF-B88AB8962449";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1.6542106511880739 -9.3515170848036959 -3.3456386336996355 ;
+	setAttr ".t" -type "double3" 1.8905496198033656 -27.537015719845819 -1.170101456285505 ;
 	setAttr ".r" -type "double3" 2616.8616472578715 546.19999999994479 0 ;
 	setAttr ".rp" -type "double3" 0 1.7763568394002505e-15 3.5527136788005009e-15 ;
 	setAttr ".rpt" -type "double3" -1.0286830103842383e-14 4.6787709721172395e-16 -2.315834228623659e-15 ;
@@ -23,7 +23,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "DB1DE19A-424C-ADB3-D486-759DA72A7B7A";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 5.8863367612934576;
+	setAttr ".coi" 24.203028021548853;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
